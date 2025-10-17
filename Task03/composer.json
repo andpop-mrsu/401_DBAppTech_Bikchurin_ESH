@@ -1,0 +1,22 @@
+{
+  "name": "aiten163/guess-number",
+  "type": "library",
+  "autoload": {
+    "files": [
+      "src/Controller.php",
+      "src/View.php",
+      "src/Game.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Elmir Bikchurin"
+    }
+  ],
+  "require": {
+    "wp-cli/php-cli-tools": "^0.12.6"
+  },
+  "bin": [
+    "bin/guess-number"
+  ]
+}

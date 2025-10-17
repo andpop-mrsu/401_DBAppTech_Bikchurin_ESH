@@ -1,0 +1,4 @@
+/vendor/
+../../../../popov_labs/guess-number/composer.lock
+/.composer/
+/.idea/
