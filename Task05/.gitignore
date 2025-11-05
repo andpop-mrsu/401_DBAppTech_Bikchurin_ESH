@@ -1,0 +1,8 @@
+/vendor/
+composer.lock
+/.composer/
+/.idea/
+/data/game.db
+*.log
+.DS_Store
+Thumbs.db
