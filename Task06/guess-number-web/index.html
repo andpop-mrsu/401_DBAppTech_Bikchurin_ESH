@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай Число</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+    <div class="main-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Угадай Число</h1>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div id="main-menu" class="screen active">
+                <div class="menu-header">
+                    <h2>Главное меню</h2>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-card" id="new-game-btn">
+                        <h3>Новая игра</h3>
+                        <p>Начать новую игру</p>
+                    </div>
+
+                    <div class="menu-card" id="history-btn">
+                        <h3>История игр</h3>
+                        <p>Просмотр истории и статистики</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="new-game-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Новая игра</h2>
+                </div>
+
+                <form id="new-game-form" class="game-form">
+                    <div class="input-group">
+                        <input type="text" id="player-name" value="Игрок" required>
+                        <label for="player-name">Имя игрока</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="max-number" value="100" min="10" max="1000" required>
+                        <label for="max-number">Максимальное число</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="max-attempts" value="10" min="3" max="50" required>
+                        <label for="max-attempts">Количество попыток</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Начать игру
+                        </button>
+                        <button type="button" id="back-to-menu-from-new" class="btn btn-secondary">
+                            Назад
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="game-screen" class="screen">
+                <div class="game-header">
+                    <div class="player-info">
+                        <div class="player-details">
+                            <h3 id="current-player">Игрок</h3>
+                            <div class="game-stats">
+                                <span class="stat">Диапазон: 1 - <span id="current-max-number">100</span></span>
+                                <span class="stat">Попытка: <span id="current-attempt">1</span>/<span id="total-attempts">10</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-content">
+                    <div class="guess-section">
+                        <div class="input-group large">
+                            <input type="number" id="guess-input" min="1" placeholder="Введите число">
+                            <button id="guess-btn" class="btn btn-primary">
+                                Проверить
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-feedback">
+                        <div id="game-messages" class="messages-container">
+                            <div class="welcome-message">
+                                <p>Компьютер загадал число. Попробуйте угадать!</p>
+                            </div>
+                        </div>
+
+                        <div id="attempts-history" class="attempts-history"></div>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button id="back-to-menu-from-game" class="btn btn-secondary">
+                        В меню
+                    </button>
+                </div>
+            </div>
+
+            <div id="history-screen" class="screen">
+                <div class="screen-header">
+                    <h2>История игр</h2>
+                </div>
+
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="all">Все игры</button>
+                        <button class="tab-btn" data-tab="won">Победы</button>
+                        <button class="tab-btn" data-tab="lost">Поражения</button>
+                        <button class="tab-btn" data-tab="stats">Статистика</button>
+                    </div>
+
+                    <div id="games-list" class="tab-content active"></div>
+                </div>
+
+                <div class="history-actions">
+                    <button id="back-to-menu-from-history" class="btn btn-secondary">
+                        В меню
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="js/Database.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/View.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
