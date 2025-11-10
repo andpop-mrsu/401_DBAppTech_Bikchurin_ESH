@@ -1,0 +1,25 @@
+{
+  "version": "1.3",
+  "name": "aiten163/guess-number",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "aiten163\\GuessNumber\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Elmir Bikchurin"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "gabordemooij/redbean": "^5.7",
+    "wp-cli/php-cli-tools": "^0.12.6",
+    "ext-pdo": "*",
+    "ext-sqlite3": "*"
+  },
+  "bin": [
+    "bin/guess-number"
+  ]
+}
